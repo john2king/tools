@@ -1,0 +1,59 @@
+1 string-char
+string类的两个方法转为char
+c_str(),data()
+反过来：
+std:string to_string(char *)
+2.output file
+out_feature.open("train.txt",ios::app|ios::out);
+
+3.c++ 读取从txt读取landmark
+  getline(in_lm,line_lm);
+  stringstream sslm(line_lm);
+  vector<Point2f>landmark;
+  for (int k=0;k<21;k++)
+  {
+      float x,y;
+      sslm>>x>>y;
+      landmark.push_back(Point2f(x,y));
+  }
+  
+4.feature extraction未封装版（xuGetSIFTDescriptor）
+(1)
+    Mat _descriptorSingle=Mat(1,SIFT_DIMENSION,CV_32F,Scalar(0.f));
+    assert(m_gray.channels()==1);
+    m_feature=Mat(1,landmark.size()*SIFT_DIMENSION,CV_32F,Scalar(0.f));
+    float*pfeature=(float*)m_feature.data;
+    float*pdescriptorSingle=(float*)_descriptorSingle.data;
+    for(int k=0; k<landmark.size(); k++)
+    {
+        xuGetSIFTDescriptor(m_gray, landmark[k], pdescriptorSingle);
+        memcpy(&pfeature[k*SIFT_DIMENSION], &pdescriptorSingle[0], sizeof(float)*SIFT_DIMENSION);
+    }
+(2)
+    getline(in_fea,line_fea)
+    stringstream ssfe(line_fea)
+     Mat m_features(1,2688,CV_32F);
+     float*pfeature=(float*)m_features.data;
+     for (int k=0;k<2688;k++)
+     {
+         float x;
+         ssfe>>x;
+         pfeature[k]=x;
+     }
+5.excute linux shell 
+    string norm_path = "../resource/img_output/" + score_level + "/norm/"+sep[0];
+    string cmd_norm = "[ ! -d "+ norm_path + " ] && mkdir " + norm_path;
+    system(cmd_norm.c_str());
+    
+6.timer
+    timeval starttime,endtime;
+    gettimeofday(&starttime,0);
+    gettimeofday(&endtime,0);
+    double timeuse = 1000000*(endtime.tv_sec - starttime.tv_sec) + endtime.tv_usec - starttime.tv_usec;
+
+7.opencv:read frame according to frame no.
+    VideoCapture cap(videoPath);
+    cap.set(CV_CAP_PROP_POS_FRAMES,frameNum - 1);
+    cap.read(mBGRVideo);
+    
+    
