@@ -1,0 +1,3 @@
+st_hk:
+common ftp:public public
+vip ftp:vip stvip
