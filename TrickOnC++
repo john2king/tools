@@ -55,5 +55,24 @@ out_feature.open("train.txt",ios::app|ios::out);
     VideoCapture cap(videoPath);
     cap.set(CV_CAP_PROP_POS_FRAMES,frameNum - 1);
     cap.read(mBGRVideo);
-    
+8.
+    enum featureType{frontal_score,illumination_score,motion_score,
+                      realface_score,unocclusion_score,clear_score,yaw,pitch,roll};
+    //featureType feaNum ;//= argv[1];
+    featureType mp;
+    try
+    {
+       if (argc == 2)
+       {
+          //std::stoi could throw exception on error in input
+          mp = static_cast<featureType>(std::stoi(argv[1]));
+       }
+       //use mp here
+       cout<<mp<<endl;
+       //cout<<1+mp<<endl;
+    }
+    catch(std::exception const & e)
+    {
+       std::cout << "exception caught with message : " << e.what() << std::endl;
+    }
     
