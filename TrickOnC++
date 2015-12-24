@@ -76,3 +76,5 @@ out_feature.open("train.txt",ios::app|ios::out);
        std::cout << "exception caught with message : " << e.what() << std::endl;
     }
     
+9.hunter usage
+export LD_LIBRARY_PATH=/home/jinxiao/sdk/st_face-5.4.0-beta-linux-ccf4f08/libs/linux-x86_64
