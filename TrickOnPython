@@ -32,3 +32,10 @@ ax.annotate('annotate', xy=(2, 1), xytext=(3, 4),
 ax.axis([0, 10, 0, 10])
 
 plt.show()
+
+
+2.counter
+from collections import Counter
+c = Counter('hello sensetime')
+for key in c:
+	print key,c[key]
