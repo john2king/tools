@@ -78,3 +78,11 @@ out_feature.open("train.txt",ios::app|ios::out);
     
 9.hunter usage
 export LD_LIBRARY_PATH=/home/jinxiao/sdk/st_face-5.4.0-beta-linux-ccf4f08/libs/linux-x86_64
+
+10. extract_feature serialize and deserialize
+    char *string_feature_1 = new char[CV_ENCODE_FEATURE_SIZE(dbVipFaces.p_feature)];
+    cv_verify_serialize_feature(dbVipFaces.p_feature, string_feature_1);
+    string faceFea = string_feature_1;
+    faceFeature.push_back(make_pair(folderName + "/" + dbFacesImgName,faceFea));
+    
+    DBface.p_feature = cv_verify_deserialize_feature(iterDB->second.c_str());
