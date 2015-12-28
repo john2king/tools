@@ -39,3 +39,10 @@ from collections import Counter
 c = Counter('hello sensetime')
 for key in c:
 	print key,c[key]
+
+3.ordered Dict
+import collections
+m = dict((str(-x), x) for x in range(30))
+m = collections.OrderedDict((str(-x), x) for x in range(30))
+for key in m.keys():
+	print key,m[key]
