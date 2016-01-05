@@ -1,0 +1,2 @@
+1.col num
+head -1 file.txt | wc
