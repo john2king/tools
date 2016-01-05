@@ -1,0 +1,5 @@
+1.basic definition
+
+iteration： 数据进行一次前向-后向的训练
+batchsize: 每次迭代训练图片的数量
+epoch: 1个epoch就是将所有的训练图像全部通过网络训练一次
