@@ -51,3 +51,39 @@ with open(sys.argv[1],'r') as fin：
 	count = sum(1 for _ in fin)
 	fin.seek(0)
 	＃more operation
+5.列表推导
+num = [1, 4, -5, 10, -7, 2, 3, -1]
+filtered_and_squared = [ x**2 for x in num if x > 0]
+print filtered_and_squared
+# [1, 16, 100, 4, 9]
+
+6。生成器
+num = [1, 4, -5, 10, -7, 2, 3, -1]
+ 
+def square_generator(optional_parameter):
+    return (x ** 2 for x in num if x > optional_parameter)
+ 
+print square_generator(0)
+# <generator object <genexpr> at 0x004E6418>
+ 
+# Option I
+for k in square_generator(0):
+    print k
+# 1, 16, 100, 4, 9
+ 
+# Option II
+g = list(square_generator(0))
+print g
+# [1, 16, 100, 4, 9]
+
+7。同时打印index与item
+mylist = ["It's", 'only', 'a', 'model']
+
+for index, item in enumerate(mylist):
+    print(index, item)
+0 It's
+1 only
+2 a
+3 model
+
+8。链式比较 4>3>2
