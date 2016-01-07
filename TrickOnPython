@@ -49,3 +49,5 @@ for key in m.keys():
 4.统计行数
 with open(sys.argv[1],'r') as fin：
 	count = sum(1 for _ in fin)
+	fin.seek(0)
+	＃more operation
