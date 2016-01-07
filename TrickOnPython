@@ -46,3 +46,6 @@ m = dict((str(-x), x) for x in range(30))
 m = collections.OrderedDict((str(-x), x) for x in range(30))
 for key in m.keys():
 	print key,m[key]
+4.统计行数
+with open(sys.argv[1],'r') as fin：
+	count = sum(1 for _ in fin)
