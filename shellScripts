@@ -1,2 +1,8 @@
 1.col num
 head -1 file.txt | wc
+
+2. run lm_live_demo
+export LD_LIBRARY_PATH=/home/jinxiao/sdk/st_face-5.4.0-beta-linux-ccf4f08/libs/linux-x86_64:/usr/local/cuda-7.0/lib64:/home/jinxiao/Downloads/caffe-jeffrey/build/lib
+
+run ./test_script
+#export LD_LIBRARY_PATH=/home/jinxiao/Git/vipsdk_lib_build_cnn/vipsdk_lib_build/facesdk/st_face_5.2/libs/linux-x86_64:/usr/local/cuda-7.0/lib64:/home/jinxiao/Downloads/caffe-jeffrey/build/lib:/home/jinxiao/Git/vipsdk_lib_build_cnn/vipsdk_lib_build/vipsdk/lib
