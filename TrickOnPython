@@ -111,3 +111,24 @@ cv2.waitKey(0)
 [000
 111
 000]
+
+##more trick
+
+10.执行系统命令并返回状态，比os.system强大
+(status, output) = commands.getstatusoutput('cat /proc/cpuinfo')
+>>> import commands
+>>> commands.getstatusoutput('ls /bin/ls')
+(0, '/bin/ls')
+还可以getstatus() or getoutput()
+
+11.os.path系列
+abspath
+split  => prefix + file
+commonprefix
+exists
+isdir isfile
+normcase win format path
+getsize return the size of the path
+
+
+
