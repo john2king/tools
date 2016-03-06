@@ -130,5 +130,7 @@ isdir isfile
 normcase win format path
 getsize return the size of the path
 
-
+12。r
+>>> if '\\n' == r'\n':
+print '=='
 
