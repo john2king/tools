@@ -134,3 +134,6 @@ getsize return the size of the path
 >>> if '\\n' == r'\n':
 print '=='
 
+13.writelines().need add  '\n' at the end of each line
+sample_list = [line+'\n' for line in sample_list]
+outfile.wirtelines(sample_list)
