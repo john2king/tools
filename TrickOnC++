@@ -86,3 +86,15 @@ export LD_LIBRARY_PATH=/home/jinxiao/sdk/st_face-5.4.0-beta-linux-ccf4f08/libs/l
     faceFeature.push_back(make_pair(folderName + "/" + dbFacesImgName,faceFea));
     
     DBface.p_feature = cv_verify_deserialize_feature(iterDB->second.c_str());
+11。
+void read_lm_from_image_name(string image_name,vector<cv_pointf_t> & lm_21_point){
+	vector<string> split_str1 = split(image_name,'.');
+	vector<string> split_str2 = split(split_str1[0],'_');
+	assert(split_str2.size() == 43);
+	for(int i = 1;i < 43;i+=2){
+		lm_21_point.x = stof(split_str2[i]);
+		lm_21_point.y = stof(split_str2[i+1]);
+		cout<<"lm_21_point.y" << lm_21_point.y << endl;
+	}
+
+}
