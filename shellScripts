@@ -20,3 +20,7 @@ scp local_file st@192.168.2.206:/home/st/desktop
 sudo fdisk -l 
 sudo umount /dev/sda5
 sudo ntfslabel /dev/sda5 newname
+
+5.remove space in filename recursively
+find -name "* *" -type d | rename 's/ /_/g'    # do the directories first
+find -name "* *" -type f | rename 's/ /_/g'
