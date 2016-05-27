@@ -18,6 +18,7 @@ scp local_file st@192.168.2.206:/home/st/desktop
 
 4.rename disk
 sudo fdisk -l 
+sudo mount /dev/sda1 /folder
 sudo umount /dev/sda5
 sudo ntfslabel /dev/sda5 newname
 
