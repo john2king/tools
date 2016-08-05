@@ -25,3 +25,20 @@ sudo ntfslabel /dev/sda5 newname
 5.remove space in filename recursively
 find -name "* *" -type d | rename 's/ /_/g'    # do the directories first
 find -name "* *" -type f | rename 's/ /_/g'
+
+
+6.ruby install :compile source
+https://www.ruby-lang.org/en/documentation/installation/#building-from-source
+//
+$ ./configure
+$ make
+$ sudo make install
+
+7.cudnn:v3 v4 v5
+just copy the lib* as well as cudnn.h to cuda/include and cude /lib64
+
+8.cuda install
+
+9.caffe config
+
+10.openmpi install
