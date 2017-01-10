@@ -42,3 +42,6 @@ just copy the lib* as well as cudnn.h to cuda/include and cude /lib64
 9.caffe config
 
 10.openmpi install
+
+11.insert prefix for each line
+sed -e 's/^/prefix/' file > file.new
