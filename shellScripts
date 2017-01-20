@@ -45,3 +45,6 @@ just copy the lib* as well as cudnn.h to cuda/include and cude /lib64
 
 11.insert prefix for each line
 sed -e 's/^/prefix/' file > file.new
+
+12.merge text by col
+paste file1 file2 | column -s $'\t' -t
